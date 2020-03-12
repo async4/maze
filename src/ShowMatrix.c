@@ -12,9 +12,11 @@ void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
             } else if (*(matrix + i*column + j) == 1) {
                 printf("\033[1;31m%d\033[0m\t", *(matrix + i*column + j));
             } else if (*(matrix + i*column + j) == 2) {
-                printf("\033[1;32m%d\033[0m\t", *(matrix + i*column + j));
+                printf("\033[1;34m%d\033[0m\t", *(matrix + i*column + j));
             } else {
                 printf("%d\t", *(matrix + i*column + j));
-            } printf("\n\n\n");
+            }
+        } 
+        printf("\n\n\n");
     }
 } 
