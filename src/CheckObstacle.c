@@ -5,7 +5,7 @@
 void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     if (x_axis - 1 < 0) {
         obs->up = 0;
-    } else if (*(matrix + (x_axis-1)*column + y_axis) == 1) {
+    } else if (*(matrix + (x_axis-1)*column + y_axis) != 0) {
         obs->up = 0;
     } else {
         obs->up = 1;
@@ -13,7 +13,7 @@ void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Ob
 
     if (x_axis + 1 < 0) {
         obs->down = 0;
-    } else if (*(matrix + (x_axis+1)*column + y_axis) == 1) {
+    } else if (*(matrix + (x_axis+1)*column + y_axis) != 0) {
         obs->down = 0;
     } else {
         obs->down = 1;
@@ -21,7 +21,7 @@ void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Ob
 
     if (y_axis - 1 < 0) {
         obs->left = 0;
-    } else if (*(matrix + x_axis*column + y_axis-1) == 1) {
+    } else if (*(matrix + x_axis*column + y_axis-1) != 0) {
         obs->left = 0;
     } else {
         obs->left = 1;
@@ -29,7 +29,7 @@ void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Ob
 
     if (y_axis + 1 < 0) {
         obs->right = 0;
-    } else if (*(matrix + x_axis*column + y_axis+1) == 1) {
+    } else if (*(matrix + x_axis*column + y_axis+1) != 0) {
         obs->right = 0;
     } else {
         obs->right = 1;
