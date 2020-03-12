@@ -1,9 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include "include/create_matrix.h"
 #include "include/show_matrix.h"
 #include "include/check_obstacle.h"
+
+void walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
+    system("clear");
+    ShowMatrix(matrix, row, column, x_axis, y_axis);
+    CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
+    usleep(300000);
+
+    int test_posi[4] = {0, 0, 0, 0};
+
+    if (strcmp(obs->up, "true") == 0)
+        test_posi[0] = 1;
+    if (strcmp(obs->down, "true") == 0)
+        test_posi[1] = 1;
+    if (strcmp(obs->left, "true") == 0)
+        test_posi[2] = 1;
+    if (strcmp(obs->right, "true") == 0)
+        test_posi[3] = 1;
+
+}
 
 int main(int argc, char** argv) {
     const int row = atoi(argv[1]);
@@ -18,16 +38,13 @@ int main(int argc, char** argv) {
     int x_axis = 0, y_axis = 0;
     Obstacle* obs = (Obstacle*) malloc(sizeof(Obstacle));
 
-    for (int x_axis = 0; x_axis < row; x_axis++) {
-        for (int y_axis = 0; y_axis < column; y_axis++) {
-            ShowMatrix(matrix, row, column, x_axis, y_axis);
-            CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
+    
+    walk(matrix, row, column, x_axis, y_axis, obs);
+    
 
-            usleep(100000);
-            system("clear");
-        }
+    // system("clear");
         
-    }
+        
 
 
    
