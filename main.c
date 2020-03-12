@@ -6,11 +6,39 @@
 #include "include/show_matrix.h"
 #include "include/check_obstacle.h"
 
-void walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
-    system("clear");
+int walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     ShowMatrix(matrix, row, column, x_axis, y_axis);
     CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
-    usleep(300000);
+
+    int i = 0+rand()%4;
+
+    printf("%d", i);
+    switch (i) {
+        case 0:
+            if (obs->up != 1)
+                break;
+            printf("%d ", obs->up);
+
+        case 1:
+            if (obs->down != 1) break; 
+            printf("%d ", obs->down);
+            break;
+
+
+        case 2:
+            if (obs->left != 1) break;
+            printf("%d ", obs->left);
+            break;
+
+
+        case 3:
+            if (obs->right != 1) break;
+            printf("%d ", obs->right);
+            break;
+
+
+    }
+
 
 }
 
