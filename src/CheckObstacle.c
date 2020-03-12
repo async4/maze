@@ -4,41 +4,41 @@
 
 void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     if (x_axis - 1 < 0) {
-        obs->up = "false";
+        obs->up = 0;
     } else if (*(matrix + (x_axis-1)*column + y_axis) == 1) {
-        obs->up = "false";
+        obs->up = 0;
     } else {
-        obs->up = "true";
+        obs->up = 1;
     }
 
     if (x_axis + 1 < 0) {
-        obs->down = "false";
+        obs->down = 0;
     } else if (*(matrix + (x_axis+1)*column + y_axis) == 1) {
-        obs->down = "false";
+        obs->down = 0;
     } else {
-        obs->down = "true";
+        obs->down = 1;
     }
 
     if (y_axis - 1 < 0) {
-        obs->left = "false";
+        obs->left = 0;
     } else if (*(matrix + x_axis*column + y_axis-1) == 1) {
-        obs->left = "false";
+        obs->left = 0;
     } else {
-        obs->left = "true";
+        obs->left = 1;
     }
 
     if (y_axis + 1 < 0) {
-        obs->right = "false";
+        obs->right = 0;
     } else if (*(matrix + x_axis*column + y_axis+1) == 1) {
-        obs->right = "false";
+        obs->right = 0;
     } else {
-        obs->right = "true";
+        obs->right = 1;
     }
 
 }
 
 void CheckObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     DefineObstacle(matrix, row, column, x_axis, y_axis, obs);
-    printf("\x1b[1;32m(%d, %d) up:%s down:%s left:%s right:%s\033[0m\n\n",
+    printf("\x1b[1;32m(%d, %d) up:%d down:%d left:%d right:%d\033[0m\n\n",
            x_axis, y_axis, obs->up, obs->down, obs->left, obs->right);
 }

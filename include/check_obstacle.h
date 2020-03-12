@@ -2,10 +2,10 @@
 #define check_obstacle
 
 typedef struct {
-    char* up;
-    char* down;
-    char* left;
-    char* right;
+    int up;
+    int down;
+    int left;
+    int right;
 } Obstacle;
 
 void CheckObstacle(int*, int, int, int, int, Obstacle*);
