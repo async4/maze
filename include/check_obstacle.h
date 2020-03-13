@@ -6,6 +6,7 @@ typedef struct {
     int down;
     int left;
     int right;
+    int closeToTarget;
 } Obstacle;
 
 void CheckObstacle(int*, int, int, int, int, Obstacle*);

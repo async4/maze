@@ -8,8 +8,14 @@
 #include "include/check_obstacle.h"
 
 int walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
+    system("clear");
     ShowMatrix(matrix, row, column, x_axis, y_axis);
     CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
+
+    x_axis++;
+    usleep(1000000);
+    walk(matrix, row, column, x_axis, y_axis, obs);
+
 }
 
 int main(int argc, char** argv) {
@@ -26,10 +32,6 @@ int main(int argc, char** argv) {
     Obstacle* obs = (Obstacle*) malloc(sizeof(Obstacle));
 
     
-    if (walk(matrix, row, column, x_axis, y_axis, obs) == 1) {
-        printf("completed");
-    } else {
-        printf("processing");
-    }
+    walk(matrix, row, column, x_axis, y_axis, obs);
 
 }
