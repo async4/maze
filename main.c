@@ -43,13 +43,8 @@ int main(int argc, char** argv) {
     int x_axis = 0, y_axis = 0;
     Obstacle* obs = (Obstacle*) malloc(sizeof(Obstacle));
 
-    int stats = Walk(matrix, row, column, x_axis, y_axis, obs);
-    if (stats == 0) {
-        printf("no way! %d\n", stats);
-    }
-
-    if (stats == 1) {
-        printf("acces to target\n");
-    }
+    printf("Out: %s\n", Walk(matrix, row, column, x_axis, y_axis, obs) == 1 ?
+           "\033[1;32mthat's it, you are reached the goal :) \033[0m" :
+           "\033[1;31moh no, you are lost :( \033[0m");
 
 }

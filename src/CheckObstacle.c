@@ -39,6 +39,7 @@ void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Ob
 
 void CheckObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     DefineObstacle(matrix, row, column, x_axis, y_axis, obs);
-    printf("\x1b[1;32m(%d, %d) up:%d down:%d left:%d right:%d\033[0m\n\n",
-           x_axis, y_axis, obs->up, obs->down, obs->left, obs->right);
+    printf("\nLocation: \033[1;33m(%d, %d)\033[0m\nObstacle: \033[1;35mup:%d down:%d left:%d right:%d\033[0m\n",
+           x_axis, y_axis,
+           obs->up, obs->down, obs->left, obs->right);
 }
