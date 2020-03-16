@@ -1,22 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <string.h>
+#include "inc/create_matrix.h"
+#include "inc/walk_matrix.h"
 
-#include "include/create_matrix.h"
-#include "include/show_matrix.h"
-#include "include/check_obstacle.h"
+/*
+    up ?
+        -- (obs->up) == 1--> 
+            -- (target(matrix, row, column, x_axis, y_axis) == True) --> END
+                -- (oneWay() == True) --> fill_current() --> walk()
+                    -- (fill_before()) --> walk()
+    
+    down ?
+        -- (obs->down) != True -->
+            -- (target() == True) --> END
+                -- (oneWay() == True) --> fill_curent() --> walk()
+                    -- (fill_before()) --> walk()
+    
+    right ?
+        -- (obs->right) != True -->
+            -- (target() == True) --> END
+                -- (oneWay() == True) --> fill_current() --> walk()
+                    --  (fill_before()) --> walk()
+    
+    left ?
+        -- (obs->left) != True -->
+            -- (target() == True) --> END
+                -- (oneWay() == True) --> fill_current() --> walk()
+                    -- (fill_before()) --> walk()
+*/
 
-int walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
-    system("clear");
-    ShowMatrix(matrix, row, column, x_axis, y_axis);
-    CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
-
-    x_axis++;
-    usleep(1000000);
-    walk(matrix, row, column, x_axis, y_axis, obs);
-
-}
 
 int main(int argc, char** argv) {
     const int row = atoi(argv[1]);
@@ -31,7 +43,13 @@ int main(int argc, char** argv) {
     int x_axis = 0, y_axis = 0;
     Obstacle* obs = (Obstacle*) malloc(sizeof(Obstacle));
 
-    
-    walk(matrix, row, column, x_axis, y_axis, obs);
+    int stats = Walk(matrix, row, column, x_axis, y_axis, obs);
+    if (stats == 0) {
+        printf("no way! %d\n", stats);
+    }
+
+    if (stats == 1) {
+        printf("acces to target\n");
+    }
 
 }

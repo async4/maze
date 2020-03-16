@@ -21,7 +21,6 @@ a = """
             x-1, y
     x, y-1   x, y    x, y+1
             x+1, y
-"""
 def find_way(row, column):
     pass
 
@@ -30,7 +29,17 @@ matrix = ''.join(a.split())
 matrix = [int(i) for i in matrix]
 matrix = np.array(matrix).reshape((7, 7))
 find_way(6, 6)
+"""
 
+
+def f(x):
+    if x == 1:
+        return x
+    
+    print(id(x))
+    return x+f(x-1)
+
+print(f(10))
 
 
 
