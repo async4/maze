@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "check_obstacle.h": "c"
-    }
+        "check_obstacle.h": "c",
+        "checked_way.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

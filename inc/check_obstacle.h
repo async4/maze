@@ -1,7 +1,7 @@
 #ifndef check_obstacle
 #define check_obstacle
 
-typedef struct {
+typedef struct obstacle {
     int up;
     int down;
     int left;

@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <time.h>
-#include "../inc/create_matrix.h"
 
 int* CreateMatrix(int row, int column) {
     int *matrix =  (int *)malloc(row * column * sizeof(int));
