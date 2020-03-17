@@ -11,7 +11,6 @@ int* CreateMatrix(int row, int column) {
         }
     }
 
-    matrix[0] = 0;
     int rand_target_row = 1+rand()%row-1;
     int rand_target_column = 1+rand()%column-1; 
     matrix[rand_target_row*column + rand_target_column] = 9;

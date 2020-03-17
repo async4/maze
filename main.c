@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "inc/create_matrix.h"
 #include "inc/walk_matrix.h"
 
@@ -10,10 +11,11 @@ int main(int argc, char** argv) {
     if (row != column) {
         printf("%s", "err: enter a same row and column value.\n");
         return 0;
-    }
+    } srand(time(0));
     
     int* matrix = CreateMatrix(row, column);
-    int x_axis = 0, y_axis = 0;
+    int x_axis = rand()%row;
+    int y_axis = rand()%column;
     Obstacle* obs = (Obstacle*) malloc(sizeof(Obstacle));
     CheckedWay* cw = (CheckedWay*) malloc(sizeof(CheckedWay));
 
