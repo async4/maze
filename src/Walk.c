@@ -6,7 +6,7 @@
 #include "../inc/check_target.h"
 #include "../inc/checked_way.h"
 
-#define SLEEP 999999
+#define SLEEP 66666
 
 
 int OneWay(Obstacle* obs) {
@@ -44,38 +44,41 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
     if (CheckTarget(matrix, row, column, x_axis, y_axis) == 1) {
         return 1;
     } else if (obs->up == 1) {
-        if (OneWay(obs) == 1) {
-            matrix[x_axis*column + y_axis] = 3;
-        } else {
-            matrix[x_axis*column + y_axis] = 2;
-        }
+        matrix[x_axis*column + y_axis] = 2;
         x_axis -= 1;
         Walk(matrix, row, column, x_axis, y_axis, obs, cw);
     } else if (obs->right == 1) {
-        if (OneWay(obs) == 1) {
-            matrix[x_axis*column + y_axis] = 3;
-        } else {
-            matrix[x_axis*column + y_axis] = 2;
-        }
+        matrix[x_axis*column + y_axis] = 2;
         y_axis += 1;
         Walk(matrix, row, column, x_axis, y_axis, obs, cw);
     } else if (obs->down == 1) {
-        if (OneWay(obs) == 1) {
-            matrix[x_axis*column + y_axis] = 3;
-        } else {
-            matrix[x_axis*column + y_axis] = 2;
-        }
+        matrix[x_axis*column + y_axis] = 2;
         x_axis += 1;
         Walk(matrix, row, column, x_axis, y_axis, obs, cw);
     } else if (obs->left == 1) {
-        if (OneWay(obs) == 1) {
-            matrix[x_axis*column + y_axis] = 3;
-        } else {
-            matrix[x_axis*column + y_axis] = 2;
-        }
+        matrix[x_axis*column + y_axis] = 2;
         y_axis -= 1;
         Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-    } else {
+    } else if (OneWay(obs) == 0) {
+        if (cw->up == 1) {
+            matrix[x_axis*column + y_axis] = 3;
+            x_axis -= 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        } else if (cw->right == 1) {
+            matrix[x_axis*column + y_axis] = 3;
+            y_axis += 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        } else if (cw->down == 1) {
+            matrix[x_axis*column + y_axis] = 3;            
+            x_axis += 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        } else if (cw->left == 1) {
+            matrix[x_axis*column + y_axis] = 3;
+            y_axis -= 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        }
+    }
+    else {
         return 0;
     }
 }

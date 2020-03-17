@@ -35,6 +35,6 @@ void CheckWay(int* matrix, int row, int column, int x_axis, int y_axis, CheckedW
         cw->left = 1;
     }
 
-    printf("CHC: \033[1;36mup:%d down:%d left:%d right:%d\033[0m\n",
+    printf("CHC: \033[1;36m%d.%d.%d.%d\033[0m\n",
        cw->up, cw->down, cw->left, cw->right);
 }
