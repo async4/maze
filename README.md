@@ -1,10 +1,10 @@
 # task
 
 ### compile 
-* gcc main.c ./src/CreateMatrix.c ./src/ShowMatrix.c ./src/CheckObstacle.c ./src/CheckTarget.c ./src/Walk.c ./src/CheckWay.c
+* make
 
 ### run
-* ./build/a.out row column
+*ex: ./build/a.out 10 10
 
         2 2 1 1 0 1 1 0 1 0 
         1 2 2 1 0 0 1 0 0 1 
