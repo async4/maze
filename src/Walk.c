@@ -22,7 +22,7 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
     ShowMatrix(matrix, row, column, x_axis, y_axis);
     CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
     CheckWay(matrix, row, column, x_axis, y_axis, cw);
-    usleep(66666);
+    usleep(33333);
 
     if (CheckTarget(matrix, row, column, x_axis, y_axis) == 1) {
         return 1;
@@ -31,13 +31,13 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
         if (obs->up == 1) {
             x_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        } else if (obs->right == 1) {
-            y_axis += 1;
-            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         } else if (obs->down == 1) {
             x_axis += 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        } else if (obs->left == 1) {
+        } else if (obs->right == 1) {
+            y_axis += 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        }else if (obs->left == 1) {
             y_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         }    
@@ -46,13 +46,13 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
         if (cw->up == 1) {
             x_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        } else if (cw->right == 1) {
-            y_axis += 1;
-            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         } else if (cw->down == 1) {
             x_axis += 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        } else if (cw->left == 1) {
+        } else if (cw->right == 1) {
+            y_axis += 1;
+            Walk(matrix, row, column, x_axis, y_axis, obs, cw);
+        }else if (cw->left == 1) {
             y_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
-     for (int i = 0; i < row; i++) { printf("\t");
+     for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++) {
             if (x_axis == i && y_axis == j) {
                 printf("\033[1;36m%d\033[0m ", matrix[x_axis*column + y_axis]);

@@ -20,6 +20,6 @@ int main(int argc, char** argv) {
     CheckedWay* cw = (CheckedWay*) malloc(sizeof(CheckedWay));
 
     printf("OUT: %s\n", Walk(matrix, row, column, x_axis, y_axis, obs, cw) == 1 ?
-           "\033[1;32m(200) that's it, you are reached the goal :)\033[0m" :
-           "\033[1;31m(500) oh no, you are lost :(\033[0m");
+           "\033[1;32mthat's it, you are reached the goal :)\033[0m" :
+           "\033[1;31moh no, you are lost :(\033[0m");
 }
