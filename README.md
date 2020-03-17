@@ -23,7 +23,7 @@ OBS: 0.1.0.0
 
 CHC: 0.0.0.1
 
-OUT: (200) that's it, you are reached the goal :)
+OUT: that's it, you are reached the goal :)
 
 
 
@@ -44,5 +44,5 @@ OBS: 0.0.0.0
 
 CHC: 0.0.0.0
 
-OUT: (500) oh no, you are lost :(
+OUT: oh no, you are lost :(
 
