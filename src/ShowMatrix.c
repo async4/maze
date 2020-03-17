@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#define PLAYER "\u25C9"
-#define TARGET "\u2764"
-#define OBSTACLE "\u2585"
-#define PASSED "\u25CF"
-#define WILL_PASS "\u25CB" 
+#define PLAYER "\u25C9" // 0
+#define TARGET "\u2764" // 9
+#define OBSTACLE "\u2585" // 1
+#define WILL_PASS "\u25CB" // 2
+#define PASSED "\u25CF" // 3
 
 void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
      for (int i = 0; i < row; i++) {
@@ -14,7 +14,7 @@ void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
             } else if (matrix[i*column + j] == 9) {
                 printf("\033[1;31m%s\033[0m ", TARGET);
             } else if (matrix[i*column + j] == 1) {
-                printf("\033[1;30m%s\033[0m ", OBSTACLE);
+                printf("\033[1;38m%s\033[0m ", OBSTACLE);
             } else if (matrix[i*column + j] == 2) {
                 printf("\033[1;34m%s\033[0m ", WILL_PASS);
             } else if (matrix[i*column + j] == 3) {
