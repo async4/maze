@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "../inc/checked_way.h"
 
-
 void CheckWay(int* matrix, int row, int column, int x_axis, int y_axis, CheckedWay* cw) {
     if (x_axis - 1 < 0) {
         cw->up = 0;

@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "../inc/check_obstacle.h"
-
 
 void DefineObstacle(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs) {
     if (x_axis - 1 < 0) {

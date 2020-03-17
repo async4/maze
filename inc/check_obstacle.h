@@ -9,5 +9,4 @@ typedef struct obstacle {
 } Obstacle;
 
 void CheckObstacle(int*, int, int, int, int, Obstacle*);
-
 #endif

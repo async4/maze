@@ -9,5 +9,4 @@ typedef struct {
 } CheckedWay;
 
 void CheckWay(int*, int, int, int, int, CheckedWay*);
-
 #endif

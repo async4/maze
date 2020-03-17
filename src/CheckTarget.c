@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 int CheckTarget(int* matrix, int row, int column, int x_axis, int y_axis) {
     int target_x_axis = 0, target_y_axis = 0;
 
@@ -10,6 +8,6 @@ int CheckTarget(int* matrix, int row, int column, int x_axis, int y_axis) {
             }
         }
     }
-    return 0;
     
+    return 0;   
 }
