@@ -18,9 +18,13 @@
         1 0 0 0 1 0 1 1 0 0 
 
 LOC: (8, 3)
+
 OBS: 0.1.0.0
+
 CHC: 0.0.0.1
+
 OUT: (200) that's it, you are reached the goal :)
+
 
 
         2 3 3 3 1 1 0 0 0 0 
@@ -35,6 +39,10 @@ OUT: (200) that's it, you are reached the goal :)
         0 1 1 1 0 0 1 1 0 1 
 
 LOC: (0, 0)
+
 OBS: 0.0.0.0
+
 CHC: 0.0.0.0
+
 OUT: (500) oh no, you are lost :(
+
