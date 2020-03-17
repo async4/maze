@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "inc/create_matrix.h"
-#include "inc/walk_matrix.h"
+#include "../inc/create_matrix.h"
+#include "../inc/walk_matrix.h"
 
 int main(int argc, char** argv) {
     const int row = atoi(argv[1]);
