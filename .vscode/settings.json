@@ -4,5 +4,6 @@
         "checked_way.h": "c",
         "check_target.h": "c"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.dimInactiveRegions": false
 }

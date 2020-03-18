@@ -22,7 +22,7 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
     ShowMatrix(matrix, row, column, x_axis, y_axis);
     CheckObstacle(matrix, row, column, x_axis, y_axis, obs);
     CheckWay(matrix, row, column, x_axis, y_axis, cw);
-    usleep(33333);
+    usleep(66666);
 
     if (CheckTarget(matrix, row, column, x_axis, y_axis) == 1) {
         return 1;
