@@ -5,16 +5,15 @@
 #define OBSTACLE "\u25A2" // 1
 #define WILL_PASS "\u25CB" // 2
 #define PASSED "\u25CF" // 3
-#define COLOR  1+rand()%7
-
 
 void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
-     for (int i = 0; i < row; i++) {
+    int color = 1+rand()%7;
+    for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++) {
             if (x_axis == i && y_axis == j) {
-                printf("\033[0;3%dm%s \033[0m", COLOR, AGENT);
+                printf("\033[0;3%dm%s \033[0m", color, AGENT);
             } else if (matrix[i*column + j] == 9) {
-                printf("\033[1;3%dm%s\033[0m ", COLOR, TARGET);
+                printf("\033[1;3%dm%s\033[0m ", color, TARGET);
             } else if (matrix[i*column + j] == 1) {
                 printf("\033[1;38m%s\033[0m ", OBSTACLE);
             } else if (matrix[i*column + j] == 2) {
@@ -22,7 +21,7 @@ void ShowMatrix(int* matrix, int row, int column, int x_axis, int y_axis) {
             } else if (matrix[i*column + j] == 3) {
                 printf("\033[1;34m%s\033[0m ", PASSED);
             } else {
-                printf("\033[0;30m \033[0m ");
+                printf("  ");
             }
         } printf("\n");
     }
