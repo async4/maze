@@ -37,7 +37,7 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
         } else if (obs->right == 1) {
             y_axis += 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        }else if (obs->left == 1) {
+        } else if (obs->left == 1) {
             y_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         }    
@@ -52,7 +52,7 @@ int Walk(int* matrix, int row, int column, int x_axis, int y_axis, Obstacle* obs
         } else if (cw->right == 1) {
             y_axis += 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
-        }else if (cw->left == 1) {
+        } else if (cw->left == 1) {
             y_axis -= 1;
             Walk(matrix, row, column, x_axis, y_axis, obs, cw);
         }
